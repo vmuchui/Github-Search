@@ -1,27 +1,38 @@
 # GitHubSearch
+This is a website where users can search for github-users and view their details.You can also search for repositories by name.
+# Author
+Muchui Victor.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
+## Set-up.
+### Prerequisites
+* Angular-cli
+* Git.
+* Text-Editor.
+#### To use the project locally:
+* To use the project locally clone the repository to your desktop.
+#### accessing the deployed site:
+* You can also access the deployed site at http://vmuchui.github.io/GitHub-Search.
 
-## Development server
+#### Using the website:
+* You can choose to search for repositories by clicking on the search for Repositories link or search for users by clicking on the search user link.
+* Enter the name of the repository or user you would like to search for on the form input and click search.
+#### Technologies used:
+* Angular cli-framework
+* bootstrap.
+* vs code text-editor
+## BDD
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+|input|output
+|-----|-----
+|name of user|Their name, number of followers,number of people they follow,list of all their repositories.
+## Known Bugs
+* No known bugs as of yet.
+## Contact and Support Details
+* In case of any bugs found please contact:
+- kaigongimuchui@gmail.com on email.
+- OR call +254 7304712
+### Copyright And License
 
-## Code scaffolding
+(c) 2019 Moringa School Victor Muchui
+- MIT License.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
