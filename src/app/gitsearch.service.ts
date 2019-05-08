@@ -51,7 +51,7 @@ export class GithubsearchService {
     }
 
     let promise = new Promise((resolve, reject) => {
-      let url = "https://api.github.com/users/" + username + "?access_token=" + this.GitHubApiKey;
+      let url = 'https://api.github.com/users/' + username + '?access_token=' + this.GitHubApiKey;
       this.http.get<ProfileInterface>(url).toPromise().then(
         res => {
           this.profile = new Profile(res.login, res.avatar_url, res.html_url, res.name, res.email, res.followers, res.following);
@@ -68,11 +68,11 @@ export class GithubsearchService {
 
   getUserRepos(username: string) {
     let promise = new Promise((resolve, reject) => {
-      let url="https://api.github.com/users/"+username+"/repos?access_token="+this.GitHubApiKey;
+      let url= 'https://api.github.com/users/' + username + '/repos?access_token=' + this.GitHubApiKey;
       this.http.get<Repo[]>(url).toPromise().then(
-        res=>{
-          this.profileRepos=[];
-          if(res.length>0){
+        res => {
+          this.profileRepos = [];
+          if (res.length > 0) {
             for(var i=0; i<res.length;i++) {
               this.profileRepos.push(
                 new Repos(res[i].name, res[i].html_url, res[i].description, res[i].stargazers_count,
@@ -94,30 +94,30 @@ export class GithubsearchService {
 
   }
 
-  searchRepos(query:string){
-    let promise=new Promise((resolve,reject)=>{
-      let url="https://api.github.com/search/repositories?q="+query+"&access_token="+this.GitHubApiKey;
+  searchRepos(query: string) {
+    let promise = new Promise((resolve, reject) => {
+      let url = 'https://api.github.com/search/repositories?q=' + query + '&access_token=' + this.GitHubApiKey;
       this.http.get<RepositoriesInterface>(url)
       .toPromise().then(
-        res=>{
-          console.log(res)
-          this.searchedRepos=[];
-          if(res.total_count>0){
-            for(var i=0; i<res.items.length;i++){
-              console.log(i)
+        res => {
+          console.log(res);
+          this.searchedRepos = [];
+          if (res.total_count > 0) {
+            for (var i = 0; i < res.items.length; i++) {
+              console.log(i);
               this.searchedRepos.push(
-                new Repos(res.items[i].name,res.items[i].html_url,res.items[i].description,res.items[i].stargazers_count,
-                  res.items[i].language,res.items[i].forks
+                new Repos(res.items[i].name, res.items[i].html_url, res.items[i].description, res.items[i].stargazers_count,
+                  res.items[i].language, res.items[i].forks
                   )
-              )
+              );
             }
           }
-          resolve()
+          resolve();
         },
-        error=>{
-          console.log(error)
-          this.searchedRepos=[];
-          reject()
+        error => {
+          console.log(error);
+          this.searchedRepos = [];
+          reject();
         }
       );
     });
