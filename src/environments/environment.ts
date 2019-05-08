@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'e23f88eccea927f61fea2d5ef14950f0aadbceb6'
+  GitHubApiKey: 'e23f88eccea927f61fea2d5ef14950f0aadbceb6'
 };
 
 /*
