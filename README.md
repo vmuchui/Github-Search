@@ -25,6 +25,7 @@ Muchui Victor.
 |input|output
 |-----|-----
 |name of user|Their name, number of followers,number of people they follow,list of all their repositories.
+|name of repository|list of all repositories with the same name.
 ## Known Bugs
 * No known bugs as of yet.
 ## Contact and Support Details
