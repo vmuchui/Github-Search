@@ -25,20 +25,20 @@ export class ProfilesComponent implements OnInit {
 
   }
 
-  searchUser(){
-    this.profile=null;
-    this.profileRepos=[];
-    this.githubService.getUser(this.searchName).then(()=>{
-      this.profile=this.githubService.profile
+  searchUser() {
+    this.profile = null;
+    this.profileRepos = [];
+    this.githubService.getUser(this.searchName).then(() => {
+      this.profile = this.githubService.profile
       this.githubService.getUserRepos(this.searchName).then(()=>{
-        this.profileRepos=this.githubService.profileRepos;
-        this.error=false
+        this.profileRepos = this.githubService.profileRepos;
+        this.error = false;
         console.log(this.profileRepos);
       })
-    }).catch(error=>{
-      this.error=true;
-      console.log(error)
-    })
+    }).catch(error => {
+      this.error = true;
+      console.log(error);
+    });
   }
 
 }
