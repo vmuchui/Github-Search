@@ -1,0 +1,57 @@
+<div class="container search-form">
+  <form class="form-inline" (ngSubmit)="searchUser()">
+      <label class="sr-only" for="username">Username</label>
+      <input type="text" name="username" [(ngModel)]="searchName" class="form-control mb-2 mr-sm-2" id="username" placeholder="lydiah2015" required>      
+      <button type="submit" class="btn btn-primary mb-2">Search</button>
+    </form>
+</div>
+
+<div class="container">
+<div *ngIf="profile" class="row git-user-content">
+  <div class="col-md-4 image-">
+    <img src="{{profile.avatar}}" alt="Git User avatar loading ">
+  </div>
+
+  <div class="col-md-8 git-user">
+    <h3 appHighlight> <a href="{{profile.url}}" target="_blank">{{profile.login}}</a></h3>
+    <p>Name: {{profile.name}}</p>
+    <p> Email: {{profile.email}}</p>
+    <p>Following: {{profile.following}}</p>
+    <p>Followers: {{profile.followers}}</p>
+  </div>
+</div>
+</div>
+
+<div class="container">
+<div class="row main-content" *ngIf="profileRepos.length>0">
+  <div class="col-md-12 user-details">
+    <div class="table table-striped">
+  <h3>Repositories</h3>
+      <table class="table">
+      <tbody>
+        <tr *ngFor='let repo of profileRepos'>
+        <td>
+          <h4>
+          <a href="{{repo.url}}" >{{repo.name}}</a>
+          </h4>
+          <p>{{repo.description}}</p>
+        </td>
+        </tr>
+      </tbody>
+      </table>
+      <hr>
+    </div>
+    </div>
+  </div>
+</div>
+
+<div class="page-wrap d-flex flex-row align-items-center" *ngIf="error">
+  <div class="container">
+      <div class="row justify-content-center">
+          <div class="col-md-12 text-center">
+              <span class="display-1 d-block">Error</span>
+              <div class="mb-4 lead">Please Make sure you typed the correct username.</div>
+          </div>
+      </div>
+  </div>
+</div>
