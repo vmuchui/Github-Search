@@ -20,7 +20,7 @@ import { ProfilesComponent } from './profiles/profiles.component';
     NotFoundComponent,
     HighlightDirective,
     RepositoriesComponent,
-    ProfilesComponent
+    Profile
   ],
   imports: [
     BrowserModule,
